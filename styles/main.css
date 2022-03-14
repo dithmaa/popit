@@ -27,7 +27,7 @@ body{
   }
   .popit{
     
-    background: url('popi.png');
+    background: url('../images/popi.png');
     width: 400px;
     height: 400px;
     background-size: 100%;
@@ -47,7 +47,7 @@ body{
     height: 61px;
     /* outline: 1px solid orange; */
     cursor: pointer;
-    background: url('button.png');
+    background: url('../images/button.png');
     /* background-repeat: no-repeat; */
     background-size: 107%;
     background-position: center center;
@@ -60,7 +60,7 @@ body{
     content: '';
   }
   .cell.active{
-    background: url('act.png');
+    background: url('../images/act.png');
     background-size: 107%;
     background-position: center center;
     opacity: 1;

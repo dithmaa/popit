@@ -1,5 +1,6 @@
-//audio trigger
-const bubbleSound = new Audio('bubble-sound2.mp3');
+const popit = () => {
+  //audio trigger
+const bubbleSound = new Audio('sounds/bubble-sound2.mp3');
 bubbleSound.volume = 0.5;
 
 const bubbleSoundTrigger = () => {
@@ -55,3 +56,6 @@ popitClicker();
 
 
 
+
+}
+popit();
