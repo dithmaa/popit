@@ -1,31 +1,57 @@
-let popit = document.getElementsByClassName('grid')[0];
-//create
-  for(i = 1; i <= 36; i++){
+//audio trigger
+const bubbleSound = new Audio('bubble-sound2.mp3');
+bubbleSound.volume = 0.5;
 
-    let cell = document.createElement('span');
-    cell.classList.add('cell');
-    popit.appendChild(cell);  
-    
-    // cell.classList.add('active');
-  }
-  let cellElem = document.querySelectorAll('.grid>span');
-  var sum = 0;
-
-  for(k = 0; k < 36; k++){
-    cellElem[k].addEventListener('click', function () {
-      this.classList.toggle('active'); //cell active
-      sum++;
+const bubbleSoundTrigger = () => {
   
-      let res = document.getElementsByClassName('res');
-      res[0].innerHTML= sum; //count score
+  bubbleSound.play();
+}
 
-      //win
-      if(res[0].innerHTML >=  100){
-        res[0].classList.add('is-purple');
-      }
-      
-    });   
+
+// score counter
+let sum = 0;
+const scoreCounter = () => {
+
+  sum++;
+
+  let res = document.querySelector('.res');
+  res.innerHTML = sum; 
+
+  if (res.innerHTML >= 100) {
+    res.classList.add('is-purple');
   }
-      
-//level
+
+}
+
+// initialization cliker
+const popitCreate = () => {
+  const popit = document.querySelector('.grid');
+  for (i = 1; i <= 36; i++) {
+
+    const cell = document.createElement('span');
+    cell.classList.add('cell');
+    popit.appendChild(cell);
+    
+  }
+}
+
+// click watch
+const popitClicker = () => {
+  let cellElem = document.querySelectorAll('.grid>span');
+  for (i = 0; i < 36; i++) {
+    cellElem[i].addEventListener('click', function () {
+      this.classList.toggle('active'); 
+      bubbleSoundTrigger();
+      scoreCounter();
+    });
+  }
+  
+}
+
+
+popitCreate();
+popitClicker();
+
+
+
 
